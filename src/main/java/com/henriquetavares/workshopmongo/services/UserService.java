@@ -2,6 +2,7 @@ package com.henriquetavares.workshopmongo.services;
 
 import com.henriquetavares.workshopmongo.domain.User;
 import com.henriquetavares.workshopmongo.dto.UserDTO;
+import com.henriquetavares.workshopmongo.respository.PostRepository;
 import com.henriquetavares.workshopmongo.respository.UserRepository;
 import com.henriquetavares.workshopmongo.services.exception.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,9 @@ public class UserService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private PostRepository postRepository;
 
     public List<User> findAll() {
         return userRepository.findAll();
